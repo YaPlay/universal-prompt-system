@@ -2,7 +2,7 @@
 
 ## Universal Prompt System v1.0 — 2026-09-19
 
-Initial public release preparation for the Universal Prompt System prompt set.
+Initial public release of the Universal Prompt System prompt set (published 2026-09-19).
 
 ### Included
 

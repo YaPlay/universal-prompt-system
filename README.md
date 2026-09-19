@@ -54,7 +54,7 @@ assets/
 
 ## Status
 
-The v1.0 prompt set and system layer are finalized for review and baseline release preparation. This repository is declarative: it contains Markdown prompt contracts and documentation, not an executable application or a standalone Router binary.
+The v1.0 prompt set and system layer are the initial public release. This repository is declarative: it contains Markdown prompt contracts and documentation, not an executable application or a standalone Router binary.
 
 ## Licensing
 
@@ -63,4 +63,3 @@ Project materials are released under [CC BY 4.0](LICENSE). Attribution is requir
 ## Disclaimer
 
 Universal Prompt System is a prompt-based/declarative specification. It does not itself execute a Router, persist project state, validate external facts, or provide a production runtime. Any host application or model integration must implement the declared contracts and should perform its own safety and operational checks.
-
