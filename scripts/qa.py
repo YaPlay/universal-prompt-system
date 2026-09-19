@@ -39,7 +39,7 @@ CORE_SYSTEM_FILES = (
     "START-HERE.md",
     "VERSION-MAP.md",
 )
-ALLOWED_AUXILIARY_SYSTEM_FILES = {"RELEASE-WORKFLOW.md"}
+ALLOWED_AUXILIARY_SYSTEM_FILES = {"MAINTENANCE.md", "RELEASE-WORKFLOW.md"}
 
 # Current main is a strict v1.0 release contract.  QA_EXPECTED_VERSION gives
 # future releases an explicit override without changing the reusable checks.
@@ -363,6 +363,7 @@ def check_release_hygiene() -> None:
         "CONTRIBUTING.md",
         "SECURITY.md",
         "CODE_OF_CONDUCT.md",
+        "system/MAINTENANCE.md",
         "system/RELEASE-WORKFLOW.md",
         "docs/README-RU.md",
         "docs/README-EN.md",
