@@ -30,6 +30,16 @@ MODE_DIRS = {
     "Study": "study",
 }
 LANGUAGES = ("RU", "EN", "FR", "ES", "UA")
+CORE_SYSTEM_FILES = (
+    "CHANGELOG.md",
+    "CORE-SYSTEM-HARDENING-v1.0.md",
+    "MAIN-ROUTER-v1.0.md",
+    "MODES.md",
+    "QA-CHECKLIST.md",
+    "START-HERE.md",
+    "VERSION-MAP.md",
+)
+ALLOWED_AUXILIARY_SYSTEM_FILES = {"RELEASE-WORKFLOW.md"}
 
 # Current main is a strict v1.0 release contract.  QA_EXPECTED_VERSION gives
 # future releases an explicit override without changing the reusable checks.
@@ -141,11 +151,19 @@ def check_mode_files() -> tuple[list[Path], dict[Path, dict[str, str]]]:
         )
 
     system_paths = sorted((ROOT / "system").glob("*.md"))
-    if len(system_paths) != RELEASE_CONTRACT["system_file_count"]:
+    core_system_paths = [ROOT / "system" / name for name in CORE_SYSTEM_FILES if (ROOT / "system" / name).is_file()]
+    if len(core_system_paths) != RELEASE_CONTRACT["system_file_count"]:
         fail(
             "Canonical file count",
-            f"system files: expected {RELEASE_CONTRACT['system_file_count']}, found {len(system_paths)}",
+            f"canonical system files: expected {RELEASE_CONTRACT['system_file_count']}, found {len(core_system_paths)}",
         )
+    unexpected_system = sorted(
+        path.name
+        for path in system_paths
+        if path.name not in CORE_SYSTEM_FILES and path.name not in ALLOWED_AUXILIARY_SYSTEM_FILES
+    )
+    if unexpected_system:
+        fail("Canonical file count", f"unexpected system files: {unexpected_system}")
 
     values_by_path: dict[Path, dict[str, str]] = {}
     tuple_to_paths: defaultdict[tuple[str, str], list[Path]] = defaultdict(list)
@@ -345,6 +363,7 @@ def check_release_hygiene() -> None:
         "CONTRIBUTING.md",
         "SECURITY.md",
         "CODE_OF_CONDUCT.md",
+        "system/RELEASE-WORKFLOW.md",
         "docs/README-RU.md",
         "docs/README-EN.md",
         "docs/README-FR.md",
