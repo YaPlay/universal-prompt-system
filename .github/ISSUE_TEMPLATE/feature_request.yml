@@ -1,0 +1,63 @@
+name: Feature request
+description: Propose a broadly useful improvement to the prompt system.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem-goal
+    attributes:
+      label: Problem or goal
+      description: What user problem should this proposal solve?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-scope
+    attributes:
+      label: Affected Mode or system layer
+      options:
+        - Standard
+        - RPG
+        - Sakura
+        - Cyber
+        - Anime Magic
+        - Executive
+        - Study
+        - System / Router
+        - Multiple Modes
+        - Documentation only
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: Describe the proposed behavior and the user-visible result.
+    validations:
+      required: true
+
+  - type: textarea
+    id: universal-usefulness
+    attributes:
+      label: Why is this universally useful?
+      description: Explain which users or workflows benefit and why this belongs in the shared system.
+    validations:
+      required: true
+
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility with existing Mode contracts
+      description: Explain how the proposal preserves locks, state semantics, command identity, version pinning, and cross-language parity.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: data-safety
+    attributes:
+      label: Data safety
+      options:
+        - label: I confirm that this request contains no secrets, credentials, private paths, personal data, or unredacted private Project Export.
+          required: true

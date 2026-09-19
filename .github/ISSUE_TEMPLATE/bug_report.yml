@@ -1,0 +1,104 @@
+name: Bug report
+description: Report a reproducible problem in a Mode or the system layer.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please remove secrets, personal data, private paths, and sensitive Project Export content before submitting.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Short description
+      description: Briefly describe the problem.
+      placeholder: What went wrong?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Affected Mode
+      options:
+        - Standard
+        - RPG
+        - Sakura
+        - Cyber
+        - Anime Magic
+        - Executive
+        - Study
+        - System / Router
+        - Multiple Modes
+        - Unknown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options:
+        - RU
+        - EN
+        - FR
+        - ES
+        - UA
+        - Multiple languages
+        - Not applicable
+    validations:
+      required: true
+
+  - type: input
+    id: prompt-version
+    attributes:
+      label: Prompt Version
+      description: Provide the exact value from the file metadata, for example v1.0.
+      placeholder: v1.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: List the smallest reliable sequence that reproduces the issue.
+      placeholder: |
+        1. Start with ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened according to the relevant contract?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead? Include any visible error or state mismatch.
+    validations:
+      required: true
+
+  - type: textarea
+    id: export-snippet
+    attributes:
+      label: Optional Project Export or relevant snippet
+      description: Share only a redacted, minimal excerpt. Do not include secrets or private data.
+      render: markdown
+
+  - type: checkboxes
+    id: data-safety
+    attributes:
+      label: Data safety
+      options:
+        - label: I confirm that this report contains no secrets, credentials, private paths, personal data, or unredacted private Project Export.
+          required: true

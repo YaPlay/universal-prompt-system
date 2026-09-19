@@ -56,6 +56,12 @@ assets/
 
 The v1.0 prompt set and system layer are the initial public release. This repository is declarative: it contains Markdown prompt contracts and documentation, not an executable application or a standalone Router binary.
 
+## Contributing
+
+- [Read the contribution guide](CONTRIBUTING.md).
+- [Report a bug](https://github.com/YaPlay/universal-prompt-system/issues/new?template=bug_report.yml).
+- [Request a feature](https://github.com/YaPlay/universal-prompt-system/issues/new?template=feature_request.yml).
+
 ## Licensing
 
 Project materials are released under [CC BY 4.0](LICENSE). Attribution is required for sharing or adapting the material. See the license for the complete terms.
