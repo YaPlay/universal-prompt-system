@@ -104,7 +104,19 @@ After any supported Language selection:
 7. do not replace the full re-render with a shortened fallback such as "Language switched to RU" followed only by a comma-separated Mode list;
 8. a change in form of address, including informal/formal wording such as ты/вы, must not replace, delay, or interrupt the required Startup Flow transition.
 
-An acknowledgement-only response such as `Переключаюсь на русский.`, `Продолжаем на русском.`, or an equivalent localized sentence is invalid when Style / Mode is still unselected.
+An acknowledgement-only response such as `Переключаюсь на русский.`, `Продолжаем на русском.`, `Language changed to EN.`, `Мову змінено на UA.`, or an equivalent localized sentence is invalid when Style / Mode is still unselected.
+
+A language token received before Style confirmation is a **transition command**, not a standalone preference update. It must atomically perform:
+
+1. set the new confirmed startup Language;
+2. discard only the previously rendered Style Selection view, not project State;
+3. immediately render the complete localized Step 2 screen;
+4. include all eight Mode names;
+5. include one localized description for every Mode;
+6. include the compact Mode choice row;
+7. stop and wait for a Style choice.
+
+Do not emit any intermediate assistant message between the language command and the complete Step 2 screen.
 
 For RU, the next surface should be equivalent in meaning to:
 
