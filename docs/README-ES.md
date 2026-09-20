@@ -6,6 +6,12 @@
 
 # Universal Prompt System — Español
 
+![Version](https://img.shields.io/badge/version-v1.0-blue)
+![Modes](https://img.shields.io/badge/modes-7-purple)
+![Languages](https://img.shields.io/badge/languages-5-green)
+[![Repository QA](https://github.com/YaPlay/universal-prompt-system/actions/workflows/qa.yml/badge.svg)](https://github.com/YaPlay/universal-prompt-system/actions/workflows/qa.yml)
+![License](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey)
+
 **Un sistema de prompts multilingüe basado en Modos, con enrutamiento estricto, protección del estado, Recovery y validación final.**
 
 ---
@@ -191,3 +197,94 @@ Consulta [VERSION-MAP.md](../system/VERSION-MAP.md) y [CHANGELOG.md](../system/C
 - [License](../LICENSE)
 
 Universal Prompt System es una especificación declarativa basada en prompts, no una aplicación runtime independiente.
+
+---
+
+## Estructura del repositorio
+
+```text
+universal-prompt-system/
+├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── CODE_OF_CONDUCT.md
+├── system/
+│   ├── START-HERE.md
+│   ├── STARTUP-FLOW-v1.0.md
+│   ├── CORE-SYSTEM-HARDENING-v1.0.md
+│   ├── MAIN-ROUTER-v1.0.md
+│   ├── MODES.md
+│   ├── VERSION-MAP.md
+│   ├── QA-CHECKLIST.md
+│   ├── RELEASE-WORKFLOW.md
+│   ├── MAINTENANCE.md
+│   └── CHANGELOG.md
+├── prompts/
+│   ├── standard/
+│   ├── rpg/
+│   ├── sakura/
+│   ├── cyber/
+│   ├── anime-magic/
+│   ├── executive/
+│   └── study/
+├── docs/
+├── scripts/
+│   └── qa.py
+└── assets/
+```
+
+## Puntos de entrada del sistema
+
+1. [START-HERE](../system/START-HERE.md)
+2. [STARTUP-FLOW-v1.0](../system/STARTUP-FLOW-v1.0.md)
+3. [CORE-SYSTEM-HARDENING-v1.0](../system/CORE-SYSTEM-HARDENING-v1.0.md)
+4. [MAIN-ROUTER-v1.0](../system/MAIN-ROUTER-v1.0.md)
+5. [MODES](../system/MODES.md)
+6. [VERSION-MAP](../system/VERSION-MAP.md)
+
+## Comportamiento completo del proyecto
+
+### Start
+
+Un nuevo Project ID se crea solo después de la confirmación explícita de inicio del Mode seleccionado.
+
+### Save / Export
+
+Project Export representa el mismo proyecto y conserva su identity y pinned tuple.
+
+### Project Copy
+
+Project Copy crea un proyecto nuevo y obtiene un nuevo Project ID solo después de su propia confirmación de inicio.
+
+### Resume
+
+Un Resume válido restaura el mismo Project ID, Mode, Language, Version, Route, Current Position, statuses, history, settings, Checkpoints, Important Decisions y Mode-specific State.
+
+### Final
+
+La finalización requiere validación y una confirmación explícita separada.
+
+### Reopen
+
+Reopen conserva el mismo Project ID y mantiene el Final anterior en el historial.
+
+## Contribuciones
+
+Las contribuciones son bienvenidas si preservan system isolation, translation parity, routing y Core Locks.
+
+- [Contribution Guide](../CONTRIBUTING.md)
+- [Informar de un error](https://github.com/YaPlay/universal-prompt-system/issues/new?template=bug_report.yml)
+- [Solicitar una función](https://github.com/YaPlay/universal-prompt-system/issues/new?template=feature_request.yml)
+
+## Seguridad
+
+Consulta [SECURITY.md](../SECURITY.md). No publiques secrets, private keys, access tokens, rutas personales de archivos ni environment files.
+
+## Licencia
+
+Universal Prompt System se publica bajo **CC BY 4.0**. Puedes compartir y adaptar el material con atribución. Términos completos: [LICENSE](../LICENSE).
+
+## Nota importante
+
+Universal Prompt System es una **especificación declarativa basada en prompts**. No proporciona por sí mismo un Router binary independiente, persistent storage, external fact validation ni autonomous runtime execution. Cualquier host application o integración de IA debe implementar los contracts declarados y realizar sus propias comprobaciones operativas y de seguridad.
