@@ -23,6 +23,43 @@ recognize Universal Prompt System and start this flow. Do not respond only with 
 
 The first startup surface must identify Universal Prompt System and request Language. After Language is confirmed, request Mode.
 
+### Beautiful Startup Screen
+
+Repository entry must use a clear, mobile-first presentation instead of a dry technical acknowledgement.
+
+The first visible screen should follow this structure in the user's conversational language:
+
+# ✨ Universal Prompt System
+
+**System detected.**  
+Start the Startup Flow.
+
+## 🌐 Step 1 of 3 — Language
+
+Choose the project language:
+
+- 🇷🇺 **RU — Русский**
+- 🇬🇧 **EN — English**
+- 🇫🇷 **FR — Français**
+- 🇪🇸 **ES — Español**
+- 🇺🇦 **UA — Українська**
+
+If one language is an obvious conversational candidate, show it as a suggestion, for example:
+
+**Suggested:** 🇷🇺 Русский
+
+Then show compact selectable labels:
+
+`Русский` · `English` · `Français` · `Español` · `Українська`
+
+The presentation must:
+- use headings and short sections;
+- remain readable on a phone;
+- avoid wide tables and horizontal scrolling;
+- avoid raw implementation phrases such as only "repository detected" or "choose language: RU · EN · FR · ES · UA";
+- make the current startup step obvious;
+- not create project State.
+
 No project, Project ID, Progress, Current Position, task, quest, step, or project State exists yet.
 
 ## 3. Language Selection
@@ -52,7 +89,41 @@ An acknowledgement-only response such as "Continuing in Russian" is invalid. Do 
 
 Required transition:
 
-`supported Language selected → Language confirmed → Mode choices shown immediately`
+`Language selected → immediately render Style Selection → wait for style choice`
+
+This transition is mandatory.
+
+After any supported Language selection:
+
+1. do not end the response with a language acknowledgement only;
+2. immediately render the Style / Mode Selection screen;
+3. render Mode names and descriptions in the selected interface language;
+4. never skip Style Selection when no Style / Mode has already been selected in the current Startup Flow;
+5. if the user changes Language during Startup Flow before Style / Mode confirmation, re-render the FULL Step 2 of 3 Style / Mode Selection screen in the newly selected language;
+6. the re-rendered Style / Mode screen must preserve the same rich mobile-first structure used after the initial Language selection: step header, confirmed Language, all eight Mode names, one localized description per Mode, and the compact choice row;
+7. do not replace the full re-render with a shortened fallback such as "Language switched to RU" followed only by a comma-separated Mode list;
+8. a change in form of address, including informal/formal wording such as ты/вы, must not replace, delay, or interrupt the required Startup Flow transition.
+
+An acknowledgement-only response such as `Переключаюсь на русский.`, `Продолжаем на русском.`, or an equivalent localized sentence is invalid when Style / Mode is still unselected.
+
+For RU, the next surface should be equivalent in meaning to:
+
+`Язык: Русский.`
+
+`Выбери стиль:`
+
+- `Standard — нейтральный режим`
+- `RPG — игровой прогресс и квесты`
+- `Sakura — мягкий визуальный стиль и пошаговый путь`
+- `Cyber — интерфейс центра управления`
+- `Anime Magic — атмосферный магический стиль`
+- `Executive — решения, риски, метрики и планы`
+- `Study — структурированное обучение`
+- `Auto — автоматический подбор стиля с подтверждением`
+
+Then show the compact choice row:
+
+`Standard` · `RPG` · `Sakura` · `Cyber` · `Anime Magic` · `Executive` · `Study` · `Auto`
 
 This transition still creates no project State and does not confirm any Mode.
 
@@ -73,6 +144,14 @@ The descriptions are explanatory UI text only. They do not alter canonical Mode 
 
 ### Mobile-first Mode Selection
 
+The Mode selection surface is **Step 2 of 3** and should begin with a compact header such as:
+
+## 🎨 Step 2 of 3 — Mode
+
+**Language confirmed:** 🇷🇺 Русский
+
+Then show all Mode choices with their short descriptions.
+
 The Mode selection surface must remain readable on a phone:
 
 - show each Mode name first, followed by a concise description;
@@ -88,12 +167,17 @@ Selecting `Auto` allows the AI to analyze the user's stated project goal and pro
 
 ## 5. Mode Confirmation
 
-After Language and Mode are selected, show at least:
+After Language and Mode are selected, show **Step 3 of 3 — Confirmation** and at least:
 
 - confirmed Language;
 - selected Mode;
 - a short Mode description;
-- an explicit confirmation question.
+- an explicit confirmation question;
+- compact actions such as `Confirm` · `Back` · `Choose another`.
+
+This screen should use a clear header such as:
+
+## ✅ Step 3 of 3 — Confirmation
 
 Example:
 
