@@ -14,15 +14,19 @@ The localized label may vary, but the function and namespace identity do not. Co
 
 ## Canonical modes
 
-| Mode | Canonical identity | RU file | Mode-specific namespace | Isolation rule |
-|---|---|---|---|---|
-| Standard | `Standard` | `prompts/standard/STANDARD-RU-v1.0.md` | `Ресурсы проекта`, `Контрольная точка`, `Копия проекта`, `Экспорт проекта`, `Восстановление` | Neutral workflow; no RPG, Sakura, Cyber, magic, executive, or study state |
-| RPG | `RPG` | `prompts/rpg/RPG-QUEST-MODE-RU-v1.0.md` | `Профиль`, `Карта`, `Полная карта`, `Цели квеста`, `Компас`, `Журнал квестов`, `Лагерь восстановления`, `Инвентарь`, `Достижения`, `Босс-квест` | RPG UI and metrics require real confirmed project data |
-| Sakura | `Sakura` | `prompts/sakura/SAKURA-RU-v1.0.md` | `Шаг`, `Шаги`, `Состояние сада`, `Ресурсы сада`, `Садовая точка`, `Дополнительный шаг`, `Ключевой шаг`, `Восстановление` | Adult digital garden; no RPG stats or fake growth |
-| Cyber | `Cyber` | `prompts/cyber/CYBER-RU-v1.0.md` | `Состояние системы`, `Точка синхронизации`, `Системные ресурсы`, `Диагностика`, `Подключения`, `Восстановление` | Control-center UI; no fake signals, connections, or diagnostics |
-| Anime Magic | `Anime Magic` | `prompts/anime-magic/ANIME-MAGIC-RU-v1.0.md` | `Магическое состояние`, `Артефакты`, `Точка сохранения`, `Выбор пути`, `Риски`, `Озарения`, `Режим тишины`, `Восстановление` | Atmospheric magic UI; no RPG progression or fake lore/state |
-| Executive | `Executive` | `prompts/executive/EXECUTIVE-RU-v1.0.md` | `Решения`, `Риски`, `Метрики`, `Action Plan`, `Owners`, `Deadlines`, `Контрольная точка`, `Восстановление` | Dashboard semantics; no invented KPIs, owners, or deadlines |
-| Study | `Study` | `prompts/study/STUDY-RU-v1.0.md` | `Тема`, `Урок`, `Проверка знаний`, `Карта знаний`, `Ошибки и пробелы`, `Повторение`, `Учебные материалы`, `Восстановление` | Adult learning companion; no invented understanding, mastery, mistakes, difficulty, or progress |
+| Mode | Canonical identity | Startup label | Short description | RU file | Mode-specific namespace | Isolation rule |
+|---|---|---|---|---|---|---|
+| Standard | `Standard` | Standard | Neutral structured project workflow | `prompts/standard/STANDARD-RU-v1.0.md` | `Ресурсы проекта`, `Контрольная точка`, `Копия проекта`, `Экспорт проекта`, `Восстановление` | Neutral workflow; no RPG, Sakura, Cyber, magic, executive, or study state |
+| RPG | `RPG` | RPG | Real project as chapters, quests, maps, and confirmed progression | `prompts/rpg/RPG-QUEST-MODE-RU-v1.0.md` | `Профиль`, `Карта`, `Полная карта`, `Цели квеста`, `Компас`, `Журнал квестов`, `Лагерь восстановления`, `Инвентарь`, `Достижения`, `Босс-квест` | RPG UI and metrics require real confirmed project data |
+| Sakura | `Sakura` | Sakura | Calm digital-garden workflow with paths and steps | `prompts/sakura/SAKURA-RU-v1.0.md` | `Шаг`, `Шаги`, `Состояние сада`, `Ресурсы сада`, `Садовая точка`, `Дополнительный шаг`, `Ключевой шаг`, `Восстановление` | Adult digital garden; no RPG stats or fake growth |
+| Cyber | `Cyber` | Cyber | Technical control-center workflow | `prompts/cyber/CYBER-RU-v1.0.md` | `Состояние системы`, `Точка синхронизации`, `Системные ресурсы`, `Диагностика`, `Подключения`, `Восстановление` | Control-center UI; no fake signals, connections, or diagnostics |
+| Anime Magic | `Anime Magic` | Anime Magic | Atmospheric anime-magic project interface without RPG progression | `prompts/anime-magic/ANIME-MAGIC-RU-v1.0.md` | `Магическое состояние`, `Артефакты`, `Точка сохранения`, `Выбор пути`, `Риски`, `Озарения`, `Режим тишины`, `Восстановление` | Atmospheric magic UI; no RPG progression or fake lore/state |
+| Executive | `Executive` | Executive | Decision, risk, metric, owner, and deadline dashboard | `prompts/executive/EXECUTIVE-RU-v1.0.md` | `Решения`, `Риски`, `Метрики`, `Action Plan`, `Owners`, `Deadlines`, `Контрольная точка`, `Восстановление` | Dashboard semantics; no invented KPIs, owners, or deadlines |
+| Study | `Study` | Study | Structured learning companion with lessons and knowledge checks | `prompts/study/STUDY-RU-v1.0.md` | `Тема`, `Урок`, `Проверка знаний`, `Карта знаний`, `Ошибки и пробелы`, `Повторение`, `Учебные материалы`, `Восстановление` | Adult learning companion; no invented understanding, mastery, mistakes, difficulty, or progress |
+
+### Startup-only selector: Auto
+
+`Auto` is supported by `STARTUP-FLOW-v1.0.md` as a selector only. It analyzes the user's stated goal and proposes exactly one canonical Mode with a short reason. It never activates a Mode without explicit confirmation and does not add an eighth Mode, canonical path family, or registry tuple.
 
 ## Canonical path registry
 
