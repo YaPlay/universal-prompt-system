@@ -293,7 +293,7 @@ Start here:
 ## Localized Documentation
 
 - 🇷🇺 [Русская документация](docs/README-RU.md)
-- 🇬🇧 [English documentation](docs/README-EN.md)
+- 🇬🇧 **English documentation**
 - 🇫🇷 [Documentation française](docs/README-FR.md)
 - 🇪🇸 [Documentación en español](docs/README-ES.md)
 - 🇺🇦 [Українська документація](docs/README-UA.md)
