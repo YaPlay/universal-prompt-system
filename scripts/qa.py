@@ -438,6 +438,9 @@ def main() -> int:
         "Step 1 of 3 — Language",
         "Step 2 of 3 — Mode",
         "Step 3 of 3 — Confirmation",
+        "Language selected → immediately render Style Selection → wait for style choice",
+        "Переключаюсь на русский.",
+        "form of address",
     )
     for term in required_startup_terms:
         if term not in startup_text:
