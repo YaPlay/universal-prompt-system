@@ -427,6 +427,9 @@ def main() -> int:
         "Resume Behavior",
         "Error / Recovery Behavior",
         "Language → Mode → Confirmation → Router → Mode Start",
+        "Mandatory Language → Mode Transition",
+        "acknowledgement-only response",
+        "Mode choices shown immediately",
     )
     for term in required_startup_terms:
         if term not in startup_text:
