@@ -443,10 +443,29 @@ def main() -> int:
         "re-render the FULL Step 2 of 3 Style / Mode Selection screen",
         "one localized description per Mode",
         "do not replace the full re-render with a shortened fallback",
+        "Language selected → immediately render full Style Selection → wait for style choice",
     )
     for term in required_startup_terms:
         if term not in startup_text:
             fail("Startup Flow contract", f"system/STARTUP-FLOW-v1.0.md: missing {term!r}")
+    start_here_text = read_text(ROOT / "system" / "START-HERE.md") or ""
+    readme_text = read_text(ROOT / "README.md") or ""
+    entry_terms = (
+        "MANDATORY FIRST RESPONSE FOR REPOSITORY ENTRY",
+        "Шаг 1 из 3 — Язык",
+        "Шаг 2 из 3 — Стиль",
+        "Language selected → immediately render full Style Selection → wait for style choice",
+    )
+    for term in entry_terms:
+        if term not in start_here_text:
+            fail("Startup Flow contract", f"system/START-HERE.md: missing {term!r}")
+    readme_terms = (
+        "AI Entry Contract — Mandatory Startup UI",
+        "Language selected → immediately render full Style Selection → wait for style choice",
+    )
+    for term in readme_terms:
+        if term not in readme_text:
+            fail("Startup Flow contract", f"README.md: missing {term!r}")
     if "Auto" not in startup_text or "never silently activate" not in startup_text:
         fail("Startup Flow contract", "Auto must be proposal-only and require explicit confirmation")
     if "35 canonical Mode × Language × Version tuples" not in startup_text:
