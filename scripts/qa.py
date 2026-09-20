@@ -434,6 +434,10 @@ def main() -> int:
         "Standard** — structured project management",
         "Study** — learning mode",
         "Auto** — analyzes the stated goal",
+        "Beautiful Startup Screen",
+        "Step 1 of 3 — Language",
+        "Step 2 of 3 — Mode",
+        "Step 3 of 3 — Confirmation",
     )
     for term in required_startup_terms:
         if term not in startup_text:
