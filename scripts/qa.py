@@ -434,7 +434,7 @@ def main() -> int:
         "Study** — learning mode",
         "Auto** — analyzes the stated goal",
         "Beautiful Startup Screen",
-        "Step 1 of 3 — Language",
+        "Step 1 of 3 — Choose Language",
         "Step 2 of 3 — Mode",
         "Step 3 of 3 — Confirmation",
         "Language selected → immediately render Style Selection → wait for style choice",
