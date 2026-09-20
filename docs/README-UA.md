@@ -1,3 +1,9 @@
+<div align="center">
+
+**Мова:** 🇷🇺 [RU](README-RU.md) · 🇬🇧 [EN](../README.md) · 🇫🇷 [FR](README-FR.md) · 🇪🇸 [ES](README-ES.md) · 🇺🇦 **UA**
+
+</div>
+
 # Universal Prompt System — Українська
 
 **Багатомовна система промптів із режимами, суворою маршрутизацією, захистом стану, Recovery та фінальною перевіркою.**
