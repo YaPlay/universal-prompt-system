@@ -31,22 +31,20 @@ The first visible screen should follow this structure in the user's conversation
 
 # ✨ Universal Prompt System
 
-**System detected.**  
-Start the Startup Flow.
+**Welcome.**  
+Start project setup.
 
-## 🌐 Step 1 of 3 — Language
+## 🌐 Step 1 of 3 — Choose Language
 
-Choose the project language:
+Choose the interface language:
 
-- 🇷🇺 **RU — Русский**
-- 🇬🇧 **EN — English**
-- 🇫🇷 **FR — Français**
-- 🇪🇸 **ES — Español**
-- 🇺🇦 **UA — Українська**
+- 🇷🇺 **Русский**
+- 🇬🇧 **English**
+- 🇫🇷 **Français**
+- 🇪🇸 **Español**
+- 🇺🇦 **Українська**
 
-If one language is an obvious conversational candidate, show it as a suggestion, for example:
-
-**Suggested:** 🇷🇺 Русский
+Any supported language may be selected.
 
 Then show compact selectable labels:
 
@@ -72,7 +70,7 @@ Supported startup languages:
 - ES — Español
 - UA — Українська
 
-If the user's conversational language is obvious, it may be presented first as a suggested candidate. It is not confirmed until the user explicitly confirms it.
+Do not preselect or visually privilege one language on the first screen. The user's conversational language may guide the interface wording only; it does not become the selected project language until the user explicitly chooses one.
 
 If the language is already explicitly confirmed in the current startup, do not ask again.
 
