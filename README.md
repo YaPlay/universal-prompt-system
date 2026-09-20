@@ -14,6 +14,26 @@ The repository contains seven Modes:
 
 Each Mode is available in five languages: RU, EN, FR, ES, and UA. The current release is `v1.0`; Mode files are marked `Status: Final`.
 
+## Start from the repository
+
+If this repository is provided directly to an AI, the expected entry is Startup Flow:
+
+```text
+User:
+https://github.com/YaPlay/universal-prompt-system
+
+Assistant:
+Universal Prompt System detected.
+Choose language: RU · EN · FR · ES · UA
+
+After language confirmation:
+Choose style: Standard · RPG · Sakura · Cyber · Anime Magic · Executive · Study · Auto
+```
+
+`Auto` proposes a canonical Mode but still requires explicit confirmation. Project ID, progress, and the first Task/Quest/Step must not be created during this selection flow.
+
+See [`system/STARTUP-FLOW-v1.0.md`](system/STARTUP-FLOW-v1.0.md).
+
 ## How to choose a Mode and Language
 
 Request an exact tuple:
