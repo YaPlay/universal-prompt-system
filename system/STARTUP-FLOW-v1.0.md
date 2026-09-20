@@ -41,6 +41,21 @@ If the language is already explicitly confirmed in the current startup, do not a
 
 Language confirmation must happen before Mode confirmation.
 
+### Mandatory Language → Mode Transition
+
+When the user explicitly selects one supported language token or label (`RU`, `EN`, `FR`, `ES`, `UA`, or its displayed language name), that response MUST both:
+
+1. record the Language as confirmed startup selection; and
+2. immediately render the Mode Selection choices in the same assistant response.
+
+An acknowledgement-only response such as "Continuing in Russian" is invalid. Do not stop after confirming Language. Do not perform an extra repository description, generic repository search, or unrelated fetch before showing Mode choices when the Startup Flow contract is already loaded and the supported Language selection is unambiguous.
+
+Required transition:
+
+`supported Language selected → Language confirmed → Mode choices shown immediately`
+
+This transition still creates no project State and does not confirm any Mode.
+
 ## 4. Mode Selection
 
 Available startup choices:
