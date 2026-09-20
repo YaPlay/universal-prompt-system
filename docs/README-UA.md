@@ -6,6 +6,12 @@
 
 # Universal Prompt System — Українська
 
+![Version](https://img.shields.io/badge/version-v1.0-blue)
+![Modes](https://img.shields.io/badge/modes-7-purple)
+![Languages](https://img.shields.io/badge/languages-5-green)
+[![Repository QA](https://github.com/YaPlay/universal-prompt-system/actions/workflows/qa.yml/badge.svg)](https://github.com/YaPlay/universal-prompt-system/actions/workflows/qa.yml)
+![License](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey)
+
 **Багатомовна система промптів із режимами, суворою маршрутизацією, захистом стану, Recovery та фінальною перевіркою.**
 
 ---
@@ -191,3 +197,94 @@ Prompt Version v1.0
 - [License](../LICENSE)
 
 Universal Prompt System — декларативна prompt-based специфікація, а не автономний runtime-застосунок.
+
+---
+
+## Структура репозиторію
+
+```text
+universal-prompt-system/
+├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── CODE_OF_CONDUCT.md
+├── system/
+│   ├── START-HERE.md
+│   ├── STARTUP-FLOW-v1.0.md
+│   ├── CORE-SYSTEM-HARDENING-v1.0.md
+│   ├── MAIN-ROUTER-v1.0.md
+│   ├── MODES.md
+│   ├── VERSION-MAP.md
+│   ├── QA-CHECKLIST.md
+│   ├── RELEASE-WORKFLOW.md
+│   ├── MAINTENANCE.md
+│   └── CHANGELOG.md
+├── prompts/
+│   ├── standard/
+│   ├── rpg/
+│   ├── sakura/
+│   ├── cyber/
+│   ├── anime-magic/
+│   ├── executive/
+│   └── study/
+├── docs/
+├── scripts/
+│   └── qa.py
+└── assets/
+```
+
+## Системні точки входу
+
+1. [START-HERE](../system/START-HERE.md)
+2. [STARTUP-FLOW-v1.0](../system/STARTUP-FLOW-v1.0.md)
+3. [CORE-SYSTEM-HARDENING-v1.0](../system/CORE-SYSTEM-HARDENING-v1.0.md)
+4. [MAIN-ROUTER-v1.0](../system/MAIN-ROUTER-v1.0.md)
+5. [MODES](../system/MODES.md)
+6. [VERSION-MAP](../system/VERSION-MAP.md)
+
+## Повна поведінка проєкту
+
+### Start
+
+Новий Project ID створюється лише після явного підтвердження запуску вибраного Mode.
+
+### Save / Export
+
+Project Export представляє той самий проєкт і зберігає його identity та pinned tuple.
+
+### Project Copy
+
+Project Copy створює новий проєкт і отримує новий Project ID лише після власного підтвердження запуску.
+
+### Resume
+
+Коректний Resume відновлює той самий Project ID, Mode, Language, Version, Route, Current Position, statuses, history, settings, Checkpoints, Important Decisions і Mode-specific State.
+
+### Final
+
+Фінальне завершення вимагає перевірки та окремого явного підтвердження.
+
+### Reopen
+
+Reopen зберігає той самий Project ID і залишає попередній Final в історії.
+
+## Внесок у проєкт
+
+Внески вітаються, якщо вони зберігають system isolation, translation parity, routing і Core Locks.
+
+- [Contribution Guide](../CONTRIBUTING.md)
+- [Повідомити про помилку](https://github.com/YaPlay/universal-prompt-system/issues/new?template=bug_report.yml)
+- [Запропонувати функцію](https://github.com/YaPlay/universal-prompt-system/issues/new?template=feature_request.yml)
+
+## Безпека
+
+Див. [SECURITY.md](../SECURITY.md). Не публікуйте secrets, private keys, access tokens, особисті file paths або environment files.
+
+## Ліцензія
+
+Universal Prompt System поширюється за ліцензією **CC BY 4.0**. Матеріали можна поширювати й адаптувати з атрибуцією. Повні умови: [LICENSE](../LICENSE).
+
+## Важливе примітка
+
+Universal Prompt System — **prompt-based декларативна специфікація**. Вона сама по собі не надає окремий Router binary, persistent storage, external fact validation або autonomous runtime execution. Будь-який host application або AI integration має реалізовувати заявлені contracts і виконувати власні operational та safety checks.
