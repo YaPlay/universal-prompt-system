@@ -22,24 +22,46 @@
 
 ## AI Entry Contract — Mandatory Startup UI
 
-When this repository link is given directly to an AI, the AI must **not** stop at a plain detection line or a compact language code list.
+When this repository link is given directly to an AI, the first response must use the **full mobile-first Startup UI**. Do not use a compact fallback.
 
-The first response must use the full mobile-first Startup UI defined in [system/START-HERE.md](system/START-HERE.md) and [system/STARTUP-FLOW-v1.0.md](system/STARTUP-FLOW-v1.0.md).
+For a Russian-language conversation, the first response should follow this structure:
 
-Required behavior:
+# ✨ Universal Prompt System
 
-1. Show **Step 1 of 3 — Language** as a structured screen with all five languages and a suggested conversational language when obvious.
-2. After Language selection, in the **same assistant response**, show the full **Step 2 of 3 — Style / Mode** screen.
-3. Localize Mode names/descriptions to the selected interface language while preserving canonical Mode identities.
-4. Show all eight startup choices with short descriptions: Standard, RPG, Sakura, Cyber, Anime Magic, Executive, Study, Auto.
-5. If Language changes before Style confirmation, re-render the complete Step 2 screen in the new language.
-6. Never replace this transition with an acknowledgement-only reply such as "Switching to Russian" or with a bare comma-separated Mode list.
-7. A ты/вы or equivalent form-of-address change must not interrupt Startup Flow.
-8. After Style selection, show **Step 3 of 3 — Confirmation** and wait for explicit confirmation.
+**Добро пожаловать.**  
+Начинаем настройку проекта.
+
+## 🌐 Шаг 1 из 3 — Выбор языка
+
+Выбери язык интерфейса:
+
+- 🇷🇺 **Русский**
+- 🇬🇧 **English**
+- 🇫🇷 **Français**
+- 🇪🇸 **Español**
+- 🇺🇦 **Українська**
+
+Можно выбрать **любой язык**.
+
+`Русский` · `English` · `Français` · `Español` · `Українська`
+
+Rules:
+
+1. Do **not** preselect or visually privilege one language.
+2. Do **not** show only language codes such as `RU · EN · FR · ES · UA`.
+3. After Language selection, in the **same assistant response**, show the full **Step 2 of 3 — Style / Mode** screen.
+4. Localize every Mode description to the selected interface language.
+5. Show all eight startup choices with short descriptions and icons.
+6. If Language changes before Style confirmation, re-render the complete Step 2 screen in the new language.
+7. Never replace that transition with an acknowledgement-only reply.
+8. A ты/вы or equivalent form-of-address change must not interrupt Startup Flow.
+9. After Style selection, show **Step 3 of 3 — Confirmation** and wait for explicit confirmation.
 
 Priority:
 
 `Language selected → immediately render full Style Selection → wait for style choice`
+
+The detailed canonical screens live in [system/START-HERE.md](system/START-HERE.md) and [system/STARTUP-FLOW-v1.0.md](system/STARTUP-FLOW-v1.0.md).
 
 ---
 
@@ -77,13 +99,11 @@ https://github.com/YaPlay/universal-prompt-system
 The expected startup sequence is:
 
 ```text
-Universal Prompt System detected.
+Beautiful Language Screen
 ↓
-Choose Language
+Full Style / Mode Screen
 ↓
-Choose Style / Mode
-↓
-Confirm Mode
+Mode Confirmation
 ↓
 Main Router
 ↓
@@ -92,13 +112,7 @@ Selected Mode
 Start Project
 ```
 
-Supported languages:
-
-`RU` · `EN` · `FR` · `ES` · `UA`
-
-Available startup styles:
-
-`Standard` · `RPG` · `Sakura` · `Cyber` · `Anime Magic` · `Executive` · `Study` · `Auto`
+The first screen must show all five language names in a readable list, not only language codes. The second screen must show all eight startup styles with descriptions and icons.
 
 ### Auto
 
