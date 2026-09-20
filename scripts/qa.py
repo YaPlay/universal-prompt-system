@@ -444,6 +444,9 @@ def main() -> int:
         "one localized description per Mode",
         "do not replace the full re-render with a shortened fallback",
         "Language selected → immediately render full Style Selection → wait for style choice",
+        "A language token received before Style confirmation is a **transition command**",
+        "include one localized description for every Mode",
+        "Do not emit any intermediate assistant message",
     )
     for term in required_startup_terms:
         if term not in startup_text:
@@ -455,6 +458,14 @@ def main() -> int:
         "Шаг 1 из 3 — Язык",
         "Шаг 2 из 3 — Стиль",
         "Language selected → immediately render full Style Selection → wait for style choice",
+        "LANGUAGE CHANGE IS A FULL UI TRANSITION",
+        "Required Step 2 — RU",
+        "Required Step 2 — EN",
+        "Required Step 2 — FR",
+        "Required Step 2 — ES",
+        "Required Step 2 — UA",
+        "Language changed to EN.",
+        "Мову змінено на UA.",
     )
     for term in entry_terms:
         if term not in start_here_text:
