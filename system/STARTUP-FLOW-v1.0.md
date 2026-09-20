@@ -23,6 +23,43 @@ recognize Universal Prompt System and start this flow. Do not respond only with 
 
 The first startup surface must identify Universal Prompt System and request Language. After Language is confirmed, request Mode.
 
+### Beautiful Startup Screen
+
+Repository entry must use a clear, mobile-first presentation instead of a dry technical acknowledgement.
+
+The first visible screen should follow this structure in the user's conversational language:
+
+# ✨ Universal Prompt System
+
+**System detected.**  
+Start the Startup Flow.
+
+## 🌐 Step 1 of 3 — Language
+
+Choose the project language:
+
+- 🇷🇺 **RU — Русский**
+- 🇬🇧 **EN — English**
+- 🇫🇷 **FR — Français**
+- 🇪🇸 **ES — Español**
+- 🇺🇦 **UA — Українська**
+
+If one language is an obvious conversational candidate, show it as a suggestion, for example:
+
+**Suggested:** 🇷🇺 Русский
+
+Then show compact selectable labels:
+
+`Русский` · `English` · `Français` · `Español` · `Українська`
+
+The presentation must:
+- use headings and short sections;
+- remain readable on a phone;
+- avoid wide tables and horizontal scrolling;
+- avoid raw implementation phrases such as only "repository detected" or "choose language: RU · EN · FR · ES · UA";
+- make the current startup step obvious;
+- not create project State.
+
 No project, Project ID, Progress, Current Position, task, quest, step, or project State exists yet.
 
 ## 3. Language Selection
@@ -73,6 +110,14 @@ The descriptions are explanatory UI text only. They do not alter canonical Mode 
 
 ### Mobile-first Mode Selection
 
+The Mode selection surface is **Step 2 of 3** and should begin with a compact header such as:
+
+## 🎨 Step 2 of 3 — Mode
+
+**Language confirmed:** 🇷🇺 Русский
+
+Then show all Mode choices with their short descriptions.
+
 The Mode selection surface must remain readable on a phone:
 
 - show each Mode name first, followed by a concise description;
@@ -88,12 +133,17 @@ Selecting `Auto` allows the AI to analyze the user's stated project goal and pro
 
 ## 5. Mode Confirmation
 
-After Language and Mode are selected, show at least:
+After Language and Mode are selected, show **Step 3 of 3 — Confirmation** and at least:
 
 - confirmed Language;
 - selected Mode;
 - a short Mode description;
-- an explicit confirmation question.
+- an explicit confirmation question;
+- compact actions such as `Confirm` · `Back` · `Choose another`.
+
+This screen should use a clear header such as:
+
+## ✅ Step 3 of 3 — Confirmation
 
 Example:
 
