@@ -429,7 +429,6 @@ def main() -> int:
         "Language → Mode → Confirmation → Router → Mode Start",
         "Mandatory Language → Mode Transition",
         "acknowledgement-only response",
-        "Mode choices shown immediately",
         "Mobile-first Mode Selection",
         "Standard** — structured project management",
         "Study** — learning mode",
