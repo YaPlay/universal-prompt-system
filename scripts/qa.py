@@ -430,6 +430,10 @@ def main() -> int:
         "Mandatory Language → Mode Transition",
         "acknowledgement-only response",
         "Mode choices shown immediately",
+        "Mobile-first Mode Selection",
+        "Standard** — structured project management",
+        "Study** — learning mode",
+        "Auto** — analyzes the stated goal",
     )
     for term in required_startup_terms:
         if term not in startup_text:

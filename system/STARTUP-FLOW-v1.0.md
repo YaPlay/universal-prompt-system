@@ -58,16 +58,29 @@ This transition still creates no project State and does not confirm any Mode.
 
 ## 4. Mode Selection
 
-Available startup choices:
+Available startup choices must be shown with one short, user-facing description for each option:
 
-- Standard
-- RPG
-- Sakura
-- Cyber
-- Anime Magic
-- Executive
-- Study
-- Auto
+- **Standard** — structured project management with stages, tasks, plans, state, and completion control.
+- **RPG** — real project presented as an adventure with chapters, quests, Boss Quests, map, progress, and achievements.
+- **Sakura** — calm step-by-step project flow with a soft garden/path presentation.
+- **Cyber** — technical control-center presentation with strict statuses, diagnostics, and system-style control.
+- **Anime Magic** — expressive anime/magic presentation for a real project without RPG XP/level mechanics.
+- **Executive** — decision-focused project mode for priorities, risks, metrics, and action plans.
+- **Study** — learning mode with lessons, practice, review, knowledge checks, and learning progress.
+- **Auto** — analyzes the stated goal and proposes one canonical Mode, but never activates it without confirmation.
+
+The descriptions are explanatory UI text only. They do not alter canonical Mode identity, routing, locks, or project State.
+
+### Mobile-first Mode Selection
+
+The Mode selection surface must remain readable on a phone:
+
+- show each Mode name first, followed by a concise description;
+- prefer one compact bullet or short paragraph per Mode;
+- avoid wide tables and horizontal scrolling;
+- do not omit a Mode description merely to shorten the screen;
+- keep all eight startup choices visible in the same Mode-selection response when practical;
+- if the client visually wraps text, preserve the same Mode order and identity.
 
 `Auto` is a startup selector, not a canonical runtime Mode and not an eighth Mode file family. It never appears in the 35 canonical Mode × Language × Version tuples.
 
