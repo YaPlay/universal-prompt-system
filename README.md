@@ -7,7 +7,7 @@
 ![Version](https://img.shields.io/badge/version-v1.0-blue)
 ![Modes](https://img.shields.io/badge/modes-7-purple)
 ![Languages](https://img.shields.io/badge/languages-5-green)
-![QA](https://img.shields.io/badge/QA-Structural%20%26%20Release-success)
+[![Repository QA](https://github.com/YaPlay/universal-prompt-system/actions/workflows/qa.yml/badge.svg)](https://github.com/YaPlay/universal-prompt-system/actions/workflows/qa.yml)
 ![License](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey)
 
 </div>
