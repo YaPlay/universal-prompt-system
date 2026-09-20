@@ -481,11 +481,24 @@ def main() -> int:
             fail("Startup Flow contract", f"system/START-HERE.md: missing {term!r}")
     readme_terms = (
         "AI Entry Contract — Mandatory Startup UI",
+        "Шаг 1 из 3 — Выбор языка",
+        "Можно выбрать **любой язык**.",
+        "Do **not** preselect or visually privilege one language.",
         "Language selected → immediately render full Style Selection → wait for style choice",
+        "Beautiful Language Screen",
+        "Full Style / Mode Screen",
     )
     for term in readme_terms:
         if term not in readme_text:
             fail("Startup Flow contract", f"README.md: missing {term!r}")
+    forbidden_readme_startup = (
+        "Universal Prompt System detected.",
+        "Choose language: RU · EN · FR · ES · UA",
+        "all five languages and a suggested conversational language when obvious",
+    )
+    for term in forbidden_readme_startup:
+        if term in readme_text:
+            fail("Startup Flow contract", f"README.md: stale startup text still present {term!r}")
     if "Auto" not in startup_text or "never silently activate" not in startup_text:
         fail("Startup Flow contract", "Auto must be proposal-only and require explicit confirmation")
     if "35 canonical Mode × Language × Version tuples" not in startup_text:
