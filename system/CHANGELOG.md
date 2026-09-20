@@ -33,3 +33,14 @@ Integrated the system-layer contracts for:
 - structural, semantic, regression, adversarial, cross-mode, and cross-language QA.
 
 No mode-specific RPG, Sakura, Cyber, Anime Magic, Executive, Study, or Standard mechanics were replaced by the system layer.
+
+
+### Startup Flow hardening
+
+- added `system/STARTUP-FLOW-v1.0.md` as the pre-routing entry contract for repository links and new-project triggers;
+- added strict Language → Mode → Confirmation → Router ordering;
+- added Startup Lock before Mode activation while preserving each Mode's existing Start Lock;
+- added startup-only `Auto` Mode proposal with mandatory confirmation;
+- added startup labels and short Mode descriptions to the registry;
+- added README onboarding and startup regression QA;
+- preserved seven canonical Modes, five languages, and all 35 canonical Mode × Language × Version tuples.
