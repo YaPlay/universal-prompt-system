@@ -17,6 +17,21 @@ Use this checklist against real files and real transitions. Keyword presence alo
 - [ ] No empty or hollow required sections.
 - [ ] Cross-file language section counts and order match the RU Source of Truth for each Mode.
 
+## Startup Flow QA
+
+- [ ] Repository URL by itself starts Startup Flow instead of only describing the repository.
+- [ ] `новый`, `новый проект`, `начало`, `старт`, `start`, and `new project` start new-project Startup Flow.
+- [ ] Language is explicitly confirmed before Mode confirmation.
+- [ ] Mode is explicitly confirmed before Main Router Mode activation.
+- [ ] `Auto` only proposes one canonical Mode and never silently activates it.
+- [ ] Startup Lock blocks Project ID, Progress, Current Position, project State, Stage 1, Task 1.1, Quest 1.1, and Step 1.1 before Language + Mode confirmation.
+- [ ] Mode confirmation shows Language, Mode, short description, and an explicit confirmation question.
+- [ ] After Startup Flow, Main Router still validates the exact tuple.
+- [ ] The loaded Mode's Start Lock remains active after Startup Lock releases.
+- [ ] Valid Resume uses the pinned tuple without forcing new-project Language/Mode selection.
+- [ ] RU, EN, FR, ES, and UA preserve the same functional startup order.
+- [ ] `Auto` is not counted as an eighth canonical Mode and does not change the 35-tuple registry.
+
 ## System and Router QA
 
 - [ ] System layer loads before Mode.
