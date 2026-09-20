@@ -440,6 +440,9 @@ def main() -> int:
         "Language selected → immediately render Style Selection → wait for style choice",
         "Переключаюсь на русский.",
         "form of address",
+        "re-render the FULL Step 2 of 3 Style / Mode Selection screen",
+        "one localized description per Mode",
+        "do not replace the full re-render with a shortened fallback",
     )
     for term in required_startup_terms:
         if term not in startup_text:
