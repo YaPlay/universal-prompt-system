@@ -455,7 +455,8 @@ def main() -> int:
     readme_text = read_text(ROOT / "README.md") or ""
     entry_terms = (
         "MANDATORY FIRST RESPONSE FOR REPOSITORY ENTRY",
-        "Шаг 1 из 3 — Язык",
+        "Шаг 1 из 3 — Выбор языка",
+        "Можно выбрать **любой язык**.",
         "Шаг 2 из 3 — Стиль",
         "Language selected → immediately render full Style Selection → wait for style choice",
         "LANGUAGE CHANGE IS A FULL UI TRANSITION",
