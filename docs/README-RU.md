@@ -1,3 +1,9 @@
+<div align="center">
+
+**Язык:** 🇷🇺 **RU** · 🇬🇧 [EN](../README.md) · 🇫🇷 [FR](README-FR.md) · 🇪🇸 [ES](README-ES.md) · 🇺🇦 [UA](README-UA.md)
+
+</div>
+
 # Universal Prompt System — Русский
 
 **Многоязычная система промптов с режимами, строгой маршрутизацией, защитой состояния, Recovery и финальной проверкой.**
