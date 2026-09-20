@@ -127,6 +127,11 @@ Then show the compact choice row:
 
 This transition still creates no project State and does not confirm any Mode.
 
+Canonical priority rule:
+
+`Language selected → immediately render full Style Selection → wait for style choice`
+
+
 ## 4. Mode Selection
 
 Available startup choices must be shown with one short, user-facing description for each option:
