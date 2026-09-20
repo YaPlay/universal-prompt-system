@@ -434,8 +434,16 @@ def main() -> int:
         "Study** — learning mode",
         "Auto** — analyzes the stated goal",
         "Beautiful Startup Screen",
-        "Step 1 of 3 — Language",
+        "Step 1 of 3 — Choose Language",
         "Step 2 of 3 — Mode",
+        "🧭 **Standard**",
+        "⚔️ **RPG**",
+        "🌸 **Sakura**",
+        "🖥️ **Cyber**",
+        "✨ **Anime Magic**",
+        "💼 **Executive**",
+        "📚 **Study**",
+        "🤖 **Auto**",
         "Step 3 of 3 — Confirmation",
         "Language selected → immediately render Style Selection → wait for style choice",
         "Переключаюсь на русский.",
@@ -443,10 +451,41 @@ def main() -> int:
         "re-render the FULL Step 2 of 3 Style / Mode Selection screen",
         "one localized description per Mode",
         "do not replace the full re-render with a shortened fallback",
+        "Language selected → immediately render full Style Selection → wait for style choice",
+        "A language token received before Style confirmation is a **transition command**",
+        "include one localized description for every Mode",
+        "Do not emit any intermediate assistant message",
     )
     for term in required_startup_terms:
         if term not in startup_text:
             fail("Startup Flow contract", f"system/STARTUP-FLOW-v1.0.md: missing {term!r}")
+    start_here_text = read_text(ROOT / "system" / "START-HERE.md") or ""
+    readme_text = read_text(ROOT / "README.md") or ""
+    entry_terms = (
+        "MANDATORY FIRST RESPONSE FOR REPOSITORY ENTRY",
+        "Шаг 1 из 3 — Выбор языка",
+        "Можно выбрать **любой язык**.",
+        "Шаг 2 из 3 — Стиль",
+        "Language selected → immediately render full Style Selection → wait for style choice",
+        "LANGUAGE CHANGE IS A FULL UI TRANSITION",
+        "Required Step 2 — RU",
+        "Required Step 2 — EN",
+        "Required Step 2 — FR",
+        "Required Step 2 — ES",
+        "Required Step 2 — UA",
+        "Language changed to EN.",
+        "Мову змінено на UA.",
+    )
+    for term in entry_terms:
+        if term not in start_here_text:
+            fail("Startup Flow contract", f"system/START-HERE.md: missing {term!r}")
+    readme_terms = (
+        "AI Entry Contract — Mandatory Startup UI",
+        "Language selected → immediately render full Style Selection → wait for style choice",
+    )
+    for term in readme_terms:
+        if term not in readme_text:
+            fail("Startup Flow contract", f"README.md: missing {term!r}")
     if "Auto" not in startup_text or "never silently activate" not in startup_text:
         fail("Startup Flow contract", "Auto must be proposal-only and require explicit confirmation")
     if "35 canonical Mode × Language × Version tuples" not in startup_text:
