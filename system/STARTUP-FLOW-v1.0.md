@@ -99,8 +99,10 @@ After any supported Language selection:
 2. immediately render the Style / Mode Selection screen;
 3. render Mode names and descriptions in the selected interface language;
 4. never skip Style Selection when no Style / Mode has already been selected in the current Startup Flow;
-5. if the user changes Language during Startup Flow before Style / Mode confirmation, render Style Selection again in the newly selected language;
-6. a change in form of address, including informal/formal wording such as ты/вы, must not replace, delay, or interrupt the required Startup Flow transition.
+5. if the user changes Language during Startup Flow before Style / Mode confirmation, re-render the FULL Step 2 of 3 Style / Mode Selection screen in the newly selected language;
+6. the re-rendered Style / Mode screen must preserve the same rich mobile-first structure used after the initial Language selection: step header, confirmed Language, all eight Mode names, one localized description per Mode, and the compact choice row;
+7. do not replace the full re-render with a shortened fallback such as "Language switched to RU" followed only by a comma-separated Mode list;
+8. a change in form of address, including informal/formal wording such as ты/вы, must not replace, delay, or interrupt the required Startup Flow transition.
 
 An acknowledgement-only response such as `Переключаюсь на русский.`, `Продолжаем на русском.`, or an equivalent localized sentence is invalid when Style / Mode is still unselected.
 
