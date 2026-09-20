@@ -146,16 +146,18 @@ Canonical priority rule:
 
 Available startup choices must be shown with one short, user-facing description for each option:
 
-- **Standard** — structured project management with stages, tasks, plans, state, and completion control.
-- **RPG** — real project presented as an adventure with chapters, quests, Boss Quests, map, progress, and achievements.
-- **Sakura** — calm step-by-step project flow with a soft garden/path presentation.
-- **Cyber** — technical control-center presentation with strict statuses, diagnostics, and system-style control.
-- **Anime Magic** — expressive anime/magic presentation for a real project without RPG XP/level mechanics.
-- **Executive** — decision-focused project mode for priorities, risks, metrics, and action plans.
-- **Study** — learning mode with lessons, practice, review, knowledge checks, and learning progress.
-- **Auto** — analyzes the stated goal and proposes one canonical Mode, but never activates it without confirmation.
+- 🧭 **Standard** — structured project management with stages, tasks, plans, state, and completion control.
+- ⚔️ **RPG** — real project presented as an adventure with chapters, quests, Boss Quests, map, progress, and achievements.
+- 🌸 **Sakura** — calm step-by-step project flow with a soft garden/path presentation.
+- 🖥️ **Cyber** — technical control-center presentation with strict statuses, diagnostics, and system-style control.
+- ✨ **Anime Magic** — expressive anime/magic presentation for a real project without RPG XP/level mechanics.
+- 💼 **Executive** — decision-focused project mode for priorities, risks, metrics, and action plans.
+- 📚 **Study** — learning mode with lessons, practice, review, knowledge checks, and learning progress.
+- 🤖 **Auto** — analyzes the stated goal and proposes one canonical Mode, but never activates it without confirmation.
 
 The descriptions are explanatory UI text only. They do not alter canonical Mode identity, routing, locks, or project State.
+
+Mode icons are presentation-only. They must not change canonical Mode names, routing identity, command namespace, or registry matching.
 
 ### Mobile-first Mode Selection
 
