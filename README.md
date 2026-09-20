@@ -1,5 +1,11 @@
 <div align="center">
 
+**Language:** 🇷🇺 [RU](docs/README-RU.md) · 🇬🇧 **EN** · 🇫🇷 [FR](docs/README-FR.md) · 🇪🇸 [ES](docs/README-ES.md) · 🇺🇦 [UA](docs/README-UA.md)
+
+</div>
+
+<div align="center">
+
 # Universal Prompt System
 
 **A multilingual, mode-based prompt framework for running real projects with strict routing, state protection, recovery, and final validation.**

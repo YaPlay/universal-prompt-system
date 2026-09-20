@@ -1,3 +1,9 @@
+<div align="center">
+
+**Idioma:** 🇷🇺 [RU](README-RU.md) · 🇬🇧 [EN](../README.md) · 🇫🇷 [FR](README-FR.md) · 🇪🇸 **ES** · 🇺🇦 [UA](README-UA.md)
+
+</div>
+
 # Universal Prompt System — Español
 
 **Un sistema de prompts multilingüe basado en Modos, con enrutamiento estricto, protección del estado, Recovery y validación final.**
