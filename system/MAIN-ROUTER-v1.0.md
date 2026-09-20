@@ -2,7 +2,15 @@
 
 Status: Final
 
-The Main Router is the only entry point that selects a Mode prompt.
+The Main Router is the only entry point that resolves and loads a canonical Mode prompt after Startup Flow has produced a confirmed requested tuple for new projects.
+
+## Startup Routing
+
+Repository entry and new-project aliases run `STARTUP-FLOW-v1.0.md` before Mode resolution. Startup Flow must confirm Language first, then Mode, then Mode confirmation. `Auto` may propose a canonical Mode but may not activate one silently.
+
+Until Startup Lock is satisfied, the Router must not create project State, Project ID, Progress, Current Position, Stage 1, Task 1.1, Quest 1.1, or Step 1.1. After Startup Flow hands off a confirmed tuple, this Router validates and loads exactly one canonical Mode. The loaded Mode's own Start Lock still controls project creation.
+
+Valid Resume is exempt from new-project Startup Flow and follows Resume routing with its pinned tuple.
 
 ## Routing contract
 

@@ -35,6 +35,7 @@ CORE_SYSTEM_FILES = (
     "CORE-SYSTEM-HARDENING-v1.0.md",
     "MAIN-ROUTER-v1.0.md",
     "MODES.md",
+    "STARTUP-FLOW-v1.0.md",
     "QA-CHECKLIST.md",
     "START-HERE.md",
     "VERSION-MAP.md",
@@ -46,7 +47,7 @@ ALLOWED_AUXILIARY_SYSTEM_FILES = {"MAINTENANCE.md", "RELEASE-WORKFLOW.md"}
 RELEASE_CONTRACT = {
     "version": os.environ.get("QA_EXPECTED_VERSION", "v1.0"),
     "mode_file_count": 35,
-    "system_file_count": 7,
+    "system_file_count": 8,
     "registry_tuple_count": 35,
     "section_counts": {
         "Standard": 87,
@@ -389,6 +390,7 @@ def print_results() -> int:
         "Internal Markdown links",
         "Forbidden repository leakage",
         "Public release hygiene",
+        "Startup Flow contract",
         "File readability",
     ]
     for category in categories:
@@ -413,6 +415,37 @@ def main() -> int:
     mode_paths, values_by_path = check_mode_files()
     registry_map = check_registry(mode_paths)
     check_metadata_and_sections(mode_paths, values_by_path, registry_map)
+    startup_path = ROOT / "system" / "STARTUP-FLOW-v1.0.md"
+    startup_text = read_text(startup_path) or ""
+    required_startup_terms = (
+        "Repository Entry",
+        "Language Selection",
+        "Mode Selection",
+        "Mode Confirmation",
+        "Startup Lock",
+        "Start Trigger Aliases",
+        "Resume Behavior",
+        "Error / Recovery Behavior",
+        "Language → Mode → Confirmation → Router → Mode Start",
+    )
+    for term in required_startup_terms:
+        if term not in startup_text:
+            fail("Startup Flow contract", f"system/STARTUP-FLOW-v1.0.md: missing {term!r}")
+    if "Auto" not in startup_text or "never silently activate" not in startup_text:
+        fail("Startup Flow contract", "Auto must be proposal-only and require explicit confirmation")
+    if "35 canonical Mode × Language × Version tuples" not in startup_text:
+        fail("Startup Flow contract", "Startup Flow must preserve the 35 canonical tuple registry")
+
+    modes_text = read_text(ROOT / "system" / "MODES.md") or ""
+    if "Startup label" not in modes_text or "Short description" not in modes_text:
+        fail("Startup Flow contract", "MODES.md must expose Startup label and Short description")
+    if "Startup-only selector: Auto" not in modes_text:
+        fail("Startup Flow contract", "MODES.md must define Auto as startup-only")
+
+    router_text = read_text(ROOT / "system" / "MAIN-ROUTER-v1.0.md") or ""
+    if "## Startup Routing" not in router_text:
+        fail("Startup Flow contract", "MAIN-ROUTER-v1.0.md must include Startup Routing")
+
     check_internal_links()
     check_forbidden_leakage()
     check_release_hygiene()

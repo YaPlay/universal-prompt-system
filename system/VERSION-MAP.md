@@ -6,7 +6,7 @@ Status: Final
 
 The current compatibility tuple is:
 
-`Core System Hardening v1.0` + `Mode` + `Language` + `Prompt Version v1.0`
+`Core System Hardening v1.0` + `Startup Flow v1.0` + `Mode` + `Language` + `Prompt Version v1.0`
 
 The seven canonical Modes are Standard, RPG, Sakura, Cyber, Anime Magic, Executive, and Study. Each supports RU, EN, FR, ES, and UA through the exhaustive canonical path registry in `MODES.md` when the exact file exists and its metadata matches.
 
@@ -31,3 +31,10 @@ Resume is compatible only when the Export's pinned Mode, Language, and Version m
 ## Hardening compatibility
 
 All Mode files are subordinate to `CORE-SYSTEM-HARDENING-v1.0.md`. Mode-specific UI may extend behavior but cannot disable the complete Core lock inventory: System Layer Lock, Mode Entry Lock, Mode Heartbeat, Mode Recovery, Command Namespace Lock, Task Scope Lock, Persistent Interface Lock, Project Layer Isolation, Prompt / Artifact Isolation, Old Context Isolation, State Source Priority, Version Pinning, no silent upgrade, no silent downgrade, Single State, or Reality First.
+
+
+## Startup compatibility
+
+`STARTUP-FLOW-v1.0.md` is part of the v1.0 system layer for repository entry and new-project entry. It selects and confirms Language and a canonical Mode before Router resolution. `Auto` is a startup-only selector and is not part of the canonical Mode count or 35-tuple registry.
+
+Startup Lock is compatible with existing Mode Start Locks because they protect different boundaries: Startup Lock protects pre-routing selection; Start Lock protects actual project creation after Mode load.
